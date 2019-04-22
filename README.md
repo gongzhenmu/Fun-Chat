@@ -1,4 +1,4 @@
-#FunChat
+# FunChat
 
 Purdue cs252 spring 2019 project
 Project name: FunChat
