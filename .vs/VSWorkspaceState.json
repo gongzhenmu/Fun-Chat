@@ -5,11 +5,12 @@
     "\\src\\app",
     "\\src\\app\\chat-form",
     "\\src\\app\\chatroom",
+    "\\src\\app\\feed",
     "\\src\\app\\login-form",
+    "\\src\\app\\message",
     "\\src\\app\\models",
-    "\\src\\app\\services",
-    "\\src\\assets",
-    "\\src\\environments"
+    "\\src\\app\\services"
   ],
+  "SelectedNode": "\\src\\app\\chat-form\\chat-form.component.ts",
   "PreviewInSolutionExplorer": false
 }
