@@ -10,7 +10,8 @@ export class SignupFormComponent implements OnInit {
 	email:string;
 	password:string;
 	displayName:string;
-	errorMsg:string = '';
+	errorMsg:boolean = true ;
+
 
   constructor(private authService: AuthService,private router:Router) { }
 
@@ -18,14 +19,14 @@ export class SignupFormComponent implements OnInit {
   	const email = this.email;
   	const password = this.password;
   	const displayName = this.displayName;
-  	this.authService.signUp(email,password,displayName)
-  		.catch(error => this.errorMsg = error.message);
-    if(this.errorMsg ===''){
-      this.router.navigate(['chat']);
-    }
-   else{
+  	this.authService.signUp(email,password,displayName);
 
-   }
+   //  if(this.errorMsg ===null || this.errorMsg===undefined){
+   //    this.router.navigate(['chat']);
+   //  }
+   // else{
+
+   // }
 
     
   }

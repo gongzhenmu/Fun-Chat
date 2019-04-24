@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs'
 import * as firebase from 'firebase/app';
 import { User } from '../models/user.model';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,50 +20,54 @@ export class AuthService {
   	this.user = afAuth.authState;
   	this.afAuth.authState.subscribe(auth=>{
   		this.authState=auth;
-  		if(this.authState!==null){
-  			this.currentUserId = this.authState.uid;
+  		 if(this.authState!==null){
+  		 	this.currentUserId = this.authState.uid;
+        
   		 }
   		
   	});
    }
+
+
     authUser() {
       return this.user;
     }
 
-   //  get CurrentUserId():string{
-   //  	// return this.authState!==null ?this.authState.uid:'';
-   //  	 if(this.authState!==null){
-  	// 	 	this.currentUserId = this.authState.uid;
-  	// 	 }else{
-  	// 	 	this.currentUserId = '';
-
-  	// 	 }
-   //     return this.CurrentUserId;
-   // }
+    updateCurrentUserId(){
+    	if(this.authState!==null){
+        this.currentUserId = this.authState.user.uid;
+      }else{
+        this.currentUserId = '';
+      }
+    	
+   }
 
    login(email:string,password:string){
-   	return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-        .then((user) => {
-          this.authState = user;
-          this.currentUserId=this.authState.uid;
+   	this.afAuth.auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+           this.authState = userCredential;
           this.setUserStatus('online');
           this.router.navigate(['chat']);
-        });
+        }).catch(error => alert(error));
 
    }
 
 
    signUp(email: string, password: string, displayName: string) {
-      return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-              .then((user) => {
+     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+              .then(user => {
+
                 this.authState = user;
                 const status = 'online';
+                
                 this.setUserData(email, displayName, status);
-              }).catch(error => console.log(error));
+                this.router.navigate(['chat']);
+
+              }).catch(error => alert(error));
     }
 
     setUserStatus(status: string): void {
-    	
+    	this.updateCurrentUserId();
       const path = `users/${this.currentUserId}`;
 
       const data = {
@@ -74,7 +80,7 @@ export class AuthService {
 
 
     setUserData(email:string,displayName:string,status:string):void{
-  
+      this.updateCurrentUserId();
     	const path= `users/${this.currentUserId}`;
     	console.log(path);
     	const data= {

@@ -30,6 +30,7 @@ export class ChatService {
          if (auth !== undefined && auth !== null) {
            this.user = auth;
          }
+
           // this.getUser().valueChanges().subscribe(a => {
           //   this.userName = a.displayName;
           // });
@@ -46,7 +47,7 @@ export class ChatService {
 
  getUser() {
     const userId = this.user.uid;
-    const path = `/users/${userId}`+'displayName';
+    const path = `/users/${userId}`;
     console.log(path)
     return this.db.object(path);
  }
@@ -59,7 +60,7 @@ export class ChatService {
     this.chatMessages.push({
       message: msg,
       timeSent: timestamp,
-      userName: this.userName,
+      userName: this.setUserName(email),
       email: email
       
 
@@ -87,6 +88,15 @@ export class ChatService {
                    now.getSeconds();
 
       return (date + ' ' + time);
+    }
+
+
+
+    setUserName(email: string):string{
+      var n = email.indexOf('@');
+      return email.substr(0,n);
+
+
     }
   
 }
