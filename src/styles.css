@@ -5,9 +5,7 @@
     padding: 0;
     border: 0;
 }
-app-navbar{
-    width: 100%;
-}
+
 body {
     width: 100%;
     min-height:100%;
@@ -22,7 +20,9 @@ app-chatroom {
     flex-direction: column;
 }
 
-
+app-navbar{
+    width: 100%;
+}
 
 app-chat-form{
     width: 100%;

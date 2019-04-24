@@ -10,7 +10,7 @@ export class SignupFormComponent implements OnInit {
 	email:string;
 	password:string;
 	displayName:string;
-	errorMsg:string;
+	errorMsg:string = '';
 
   constructor(private authService: AuthService,private router:Router) { }
 
@@ -19,8 +19,15 @@ export class SignupFormComponent implements OnInit {
   	const password = this.password;
   	const displayName = this.displayName;
   	this.authService.signUp(email,password,displayName)
-  		.then(resolve => this.router.navigate(['chat']))
   		.catch(error => this.errorMsg = error.message);
+    if(this.errorMsg ===''){
+      this.router.navigate(['chat']);
+    }
+   else{
+
+   }
+
+    
   }
 
   ngOnInit(){}

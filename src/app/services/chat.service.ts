@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs/Observable'
 import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase/app';
 import { ChatMessage } from '../models/chat-message.model';
@@ -38,7 +38,7 @@ export class ChatService {
 
 
  getMessages(): AngularFireList<ChatMessage> {
-    return this.db.list('messages', ref => ref.orderByKey().limitToLast(9));
+    return this.db.list('messages', ref => ref.orderByKey().limitToLast(10));
 
   }
 
@@ -46,7 +46,7 @@ export class ChatService {
 
  getUser() {
     const userId = this.user.uid;
-    const path = `/users/${userId}`;
+    const path = `/users/${userId}`+'displayName';
     console.log(path)
     return this.db.object(path);
  }
@@ -59,7 +59,7 @@ export class ChatService {
     this.chatMessages.push({
       message: msg,
       timeSent: timestamp,
-      userName: this.user.displayName,
+      userName: this.userName,
       email: email
       
 

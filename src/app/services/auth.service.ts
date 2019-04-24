@@ -28,7 +28,7 @@ export class AuthService {
       return this.user;
     }
 
-   //  setCurrentUserId():void{
+   //  get CurrentUserId():string{
    //  	// return this.authState!==null ?this.authState.uid:'';
    //  	 if(this.authState!==null){
   	// 	 	this.currentUserId = this.authState.uid;
@@ -36,12 +36,14 @@ export class AuthService {
   	// 	 	this.currentUserId = '';
 
   	// 	 }
+   //     return this.CurrentUserId;
    // }
 
    login(email:string,password:string){
    	return this.afAuth.auth.signInWithEmailAndPassword(email, password)
         .then((user) => {
           this.authState = user;
+          this.currentUserId=this.authState.uid;
           this.setUserStatus('online');
           this.router.navigate(['chat']);
         });
@@ -83,4 +85,11 @@ export class AuthService {
     	this.db.object(path).update(data)
         .catch(error => console.log(error));
     }
+
+    
+    logout() {
+      this.afAuth.auth.signOut();
+      this.router.navigate(['login']);
+    }
+    
 }
