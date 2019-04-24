@@ -8,6 +8,7 @@ import { ChatMessage } from '../models/chat-message.model';
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,7 @@ export class ChatService {
 
   chatMessages: AngularFireList<ChatMessage>;
   chatMessage: ChatMessage;
-  userName: Observable<string>;
+  userName: string;
 
 
 
@@ -25,46 +26,46 @@ export class ChatService {
     private db: AngularFireDatabase,
     private afAuth: AngularFireAuth
     ) {
-        //this.afAuth.authState.subscribe(auth => {
-        //  if (auth !== undefined && auth !== null) {
-         //   this.user = auth;
-        //  }
-
-        //  this.getUser().subscribe(a => {
-        //    this.userName = a.displayName;
-        //  });
-        //});
+        this.afAuth.authState.subscribe(auth => {
+         if (auth !== undefined && auth !== null) {
+           this.user = auth;
+         }
+          // this.getUser().valueChanges().subscribe(a => {
+          //   this.userName = a.displayName;
+          // });
+        });
     }
 
 
  getMessages(): AngularFireList<ChatMessage> {
-    return this.db.list('messages', ref => ref.orderByKey().limitToLast(25));
+    return this.db.list('messages', ref => ref.orderByKey().limitToLast(9));
 
   }
+
 
 
  getUser() {
     const userId = this.user.uid;
     const path = `/users/${userId}`;
+    console.log(path)
     return this.db.object(path);
  }
 
 
   sendMessage(msg: string){
     const timestamp = this.getTimeStamp();
-    const email = 'test@example.com';
+    const email = this.user.email;
     this.chatMessages = this.getMessages();
     this.chatMessages.push({
       message: msg,
       timeSent: timestamp,
-      //userName: this.userName,
-      userName: 'test:user',
+      userName: this.user.displayName,
       email: email
       
 
     });
-
-    console.log('called');
+    
+    console.log(this.userName);
   }
 
 
