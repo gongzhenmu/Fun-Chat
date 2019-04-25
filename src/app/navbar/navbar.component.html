@@ -1,13 +1,24 @@
 <div class="navBar">
     <div id="logo"></div>
     <div id="heading"><a routerLink="/">{{ apptitle }}</a></div>
+
   <div class="links">
+  	<span>
+      <a *ngIf="(user|async)?.uid" routerLink="/chat">Room1</a>
+    </span>
+    <span>
+      <a *ngIf="(user|async)?.uid" routerLink="/signup">Room2</a>
+    </span>
+    <span>
+      <a *ngIf="(user|async)?.uid" routerLink="/signup">Room3</a>
+    </span>
     <span>
       <a *ngIf="!(user|async)?.uid" href="#" (click)="login()">Login</a>
     </span>
     <span>
       <a *ngIf="!(user|async)?.uid" routerLink="/signup">Sign Up</a>
     </span>
+
     <span>
       <span id="userEmail" *ngIf="(user|async)?.uid">Hello, {{userEmail}}</span>
     </span>

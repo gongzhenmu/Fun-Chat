@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable'
 import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase/app';
 import { ChatMessage } from '../models/chat-message.model';
+import { room } from '../../environments/environment';
 
 
 
@@ -32,15 +33,21 @@ export class ChatService {
          }
 
           // this.getUser().valueChanges().subscribe(a => {
-          //   this.userName = a.displayName;
+            
           // });
         });
     }
 
 
  getMessages(): AngularFireList<ChatMessage> {
-    return this.db.list('messages', ref => ref.orderByKey().limitToLast(10));
-
+   if(room.isRoom1){
+     return this.db.list('room1', ref => ref.orderByKey().limitToLast(25));
+   }else if(room.isRoom2){
+     return this.db.list('room2', ref => ref.orderByKey().limitToLast(25));
+   }else{
+     return this.db.list('room3', ref => ref.orderByKey().limitToLast(25));
+   }
+    
   }
 
 
@@ -66,7 +73,7 @@ export class ChatService {
 
     });
     
-    console.log(this.userName);
+    
   }
 
 

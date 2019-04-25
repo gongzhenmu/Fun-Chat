@@ -3,9 +3,9 @@
     height: auto;
     width: 70%;
     min-width: 400px;
-    border-radius: 5px;
+    border-radius: 15px;
     align-items:stretch;
-    background-color: #eee;
+    background-color: #268A83;
     box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -21,7 +21,7 @@
 
 .sender{
     display: block;
-    color: #222;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .timestamp {
-    color: #555;
+    color: #fff;
     font-style: italic;
 }
 
@@ -40,6 +40,7 @@
 
 .messageContent{
     height: auto;
+    width: auto;
     flex: 9;
     background-color: #fff;
     padding: 10px;

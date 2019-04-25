@@ -13,17 +13,17 @@ import { User } from '../models/user.model';
 export class AuthService {
 	private user: Observable<firebase.User>;
 	private authState:any;
-	private currentUserId:string;
+	// private currentUserId:string;
 
   constructor(private afAuth: AngularFireAuth,private db: AngularFireDatabase, private router: Router) {
 
   	this.user = afAuth.authState;
   	this.afAuth.authState.subscribe(auth=>{
   		this.authState=auth;
-  		 if(this.authState!==null){
-  		 	this.currentUserId = this.authState.uid;
+  		 // if(this.authState!==null){
+  		 // 	this.currentUserId = this.authState.uid;
         
-  		 }
+  		 // }
   		
   	});
    }
@@ -33,14 +33,9 @@ export class AuthService {
       return this.user;
     }
 
-    updateCurrentUserId(){
-    	if(this.authState!==null){
-        this.currentUserId = this.authState.user.uid;
-      }else{
-        this.currentUserId = '';
-      }
-    	
-   }
+   get currentUserId(): string {
+      return this.authState !== null ? this.authState.user.uid : '';
+    }
 
    login(email:string,password:string){
    	this.afAuth.auth.signInWithEmailAndPassword(email, password)
@@ -67,21 +62,19 @@ export class AuthService {
               }).catch(error => alert(error));
     }
 
-    setUserStatus(status: string): void {
-    	this.updateCurrentUserId();
-      const path = `users/${this.currentUserId}`;
-
-      const data = {
-        status: status
+    setUserStatus(status:string):void{
+      // this.updateCurrentUserId();
+      const path= `users/${this.currentUserId}`;
+      const data= {
+        status:status
       };
-
       this.db.object(path).update(data)
         .catch(error => console.log(error));
     }
 
 
     setUserData(email:string,status:string):void{
-      this.updateCurrentUserId();
+      // this.updateCurrentUserId();
     	const path= `users/${this.currentUserId}`;
       console.log("work here2");
     	console.log(path);
@@ -95,7 +88,9 @@ export class AuthService {
 
     
     logout() {
+
       this.afAuth.auth.signOut();
+
       this.router.navigate(['login']);
     }
     

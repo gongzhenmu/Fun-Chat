@@ -4,8 +4,6 @@ import { AuthService } from '../services/auth.service';
 import { ChatMessage } from '../models/chat-message.model';
 
 
-import { Observable } from 'rxjs/Observable'
-
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
