@@ -9,3 +9,11 @@ export const environment = {
     messagingSenderId: "739399431106"
   }
 };
+
+
+export const room = {
+	isRoom1 : false,
+	isRoom2 : false,
+	isRoom3 : false
+
+};
