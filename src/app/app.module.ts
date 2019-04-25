@@ -20,6 +20,8 @@ import { ChatService } from './services/chat.service';
 import { AuthService } from './services/auth.service';
 import { appRoutes } from '../routes';
 import { environment } from '../environments/environment';
+import { Chatroom2Component } from './chatroom2/chatroom2.component';
+import { Chatroom3Component } from './chatroom3/chatroom3.component';
 
 
 
@@ -34,7 +36,9 @@ import { environment } from '../environments/environment';
     SignupFormComponent,
     NavbarComponent,
     UserListComponent,
-    UserItemComponent
+    UserItemComponent,
+    Chatroom2Component,
+    Chatroom3Component
   ],
   imports: [
     BrowserModule,

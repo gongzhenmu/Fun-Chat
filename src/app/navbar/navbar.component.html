@@ -7,10 +7,10 @@
       <a *ngIf="(user|async)?.uid" routerLink="/chat">Room1</a>
     </span>
     <span>
-      <a *ngIf="(user|async)?.uid" routerLink="/signup">Room2</a>
+      <a *ngIf="(user|async)?.uid" routerLink="/chat2">Room2</a>
     </span>
     <span>
-      <a *ngIf="(user|async)?.uid" routerLink="/signup">Room3</a>
+      <a *ngIf="(user|async)?.uid" routerLink="/chat3">Room3</a>
     </span>
     <span>
       <a *ngIf="!(user|async)?.uid" href="#" (click)="login()">Login</a>
