@@ -60,7 +60,8 @@ export class AuthService {
                 this.authState = user;
                 const status = 'online';
                 
-                this.setUserData(email, displayName, status);
+                this.setUserData(email,  status);
+                console.log("work here1");
                 this.router.navigate(['chat']);
 
               }).catch(error => alert(error));
@@ -79,13 +80,13 @@ export class AuthService {
     }
 
 
-    setUserData(email:string,displayName:string,status:string):void{
+    setUserData(email:string,status:string):void{
       this.updateCurrentUserId();
     	const path= `users/${this.currentUserId}`;
+      console.log("work here2");
     	console.log(path);
     	const data= {
     		email:email,
-    		displayName:displayName,
     		status:status
     	};
     	this.db.object(path).update(data)

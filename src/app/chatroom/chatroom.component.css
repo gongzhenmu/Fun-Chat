@@ -2,7 +2,7 @@
     display: flex;
 }
 
-.userListWrapper {
+/*.userListWrapper {
     background-color: #2A2845;
     color: #fff;
     display: flex;
@@ -12,7 +12,7 @@
     order: 1;
     padding:20px 0px 40px 30px;
     border-right: 1px solid #222;
-}
+}*/
 
 .feedWrapper {
     background-color: #fff;
