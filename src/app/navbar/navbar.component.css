@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: #EAEAEB;
+    background-color: #fff;
 }
 
 
@@ -11,8 +11,10 @@
     flex: 4;
     padding: 24px 0px 50px 10px;
     height: 60px;
-    font-size: 1.8em;
+    font-size: 2em;
     font-weight: bold;
+
+
 }
 
 .links{

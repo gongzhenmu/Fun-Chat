@@ -22,6 +22,7 @@ import { appRoutes } from '../routes';
 import { environment } from '../environments/environment';
 import { Chatroom2Component } from './chatroom2/chatroom2.component';
 import { Chatroom3Component } from './chatroom3/chatroom3.component';
+import { ChooseroomComponent } from './chooseroom/chooseroom.component';
 
 
 
@@ -38,7 +39,8 @@ import { Chatroom3Component } from './chatroom3/chatroom3.component';
     UserListComponent,
     UserItemComponent,
     Chatroom2Component,
-    Chatroom3Component
+    Chatroom3Component,
+    ChooseroomComponent
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,7 @@ body {
 app-chatroom {
     display: flex;
     flex-direction: column;
+    width: 100%
 }
 
 app-navbar{

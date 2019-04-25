@@ -1,8 +1,11 @@
 <div class="navBar">
     <div id="logo"></div>
-    <div id="heading"><a routerLink="/">{{ apptitle }}</a></div>
+    <div id="heading"><a>{{ apptitle }}</a></div>
 
   <div class="links">
+    <span>
+      <a *ngIf="(user|async)?.uid" routerLink="/chooseroom">Home</a>
+    </span>
   	<span>
       <a *ngIf="(user|async)?.uid" routerLink="/chat">Room1</a>
     </span>
