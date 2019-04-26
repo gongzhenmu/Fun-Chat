@@ -20,5 +20,9 @@ export class LoginFormComponent implements OnInit {
   }
 
 
-  ngOnInit(){}
+  ngOnInit(){
+    // if(this.authService.authUser()!=null){
+    //   this.router.navigate(['chooseroom']);
+    // }
+  }
 }

@@ -12,12 +12,29 @@
     font-family: "Open Sans", sans-serif;
     font-size: 2em;
     flex: 1;
+    order: 3;
+    padding:0px 0px 0px 0px;
+    border-right: 1px solid #222;
+
+   
+}
+.roomListWrapper {
+    background-color: #000;
+    background: 
+    url('../../assets/image/background2.jpg') ;
+    background-size: auto;
+    color: #fff;
+    display: flex;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2em;
+    flex: 1;
     order: 1;
     padding:0px 0px 0px 0px;
     border-right: 1px solid #222;
 
    
 }
+
 
 .feedWrapper {
     background-color: #fff;

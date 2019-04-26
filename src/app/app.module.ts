@@ -23,6 +23,7 @@ import { environment } from '../environments/environment';
 import { Chatroom2Component } from './chatroom2/chatroom2.component';
 import { Chatroom3Component } from './chatroom3/chatroom3.component';
 import { ChooseroomComponent } from './chooseroom/chooseroom.component';
+import { RoomlistComponent } from './roomlist/roomlist.component';
 
 
 
@@ -40,7 +41,8 @@ import { ChooseroomComponent } from './chooseroom/chooseroom.component';
     UserItemComponent,
     Chatroom2Component,
     Chatroom3Component,
-    ChooseroomComponent
+    ChooseroomComponent,
+    RoomlistComponent
   ],
   imports: [
     BrowserModule,
