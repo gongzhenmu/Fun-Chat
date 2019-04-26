@@ -8,7 +8,27 @@
     background-color: #00000;
     box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.23);
 }
-
+/*.messageContainer2{
+    display: flex;
+    height: auto;
+    width: 80%;
+    min-width: 400px;
+    border-radius: 15px;
+    align-items:stretch;
+    background-color: #30C1AE;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.23);
+}
+.messageContainer3{
+    display: flex;
+    height: auto;
+    width: 80%;
+    min-width: 400px;
+    border-radius: 15px;
+    align-items:stretch;
+    background-color: #EE83BC;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.23);
+}
+*/
 .messageContainerPink{
     display: flex;
     height: auto;
@@ -53,12 +73,13 @@
     height: auto;
     width: auto;
     flex: 9;
-    background-color: #E0E0E0;
+    background-color: #ffffff;
     padding: 10px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
 
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+    
 .isOwnMessageContent{
     background-color: #E3F2FD;
     color: #01579B;

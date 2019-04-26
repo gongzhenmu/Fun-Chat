@@ -16,6 +16,12 @@
 
 
 }
+.logo{
+    background: 
+    /*linear-gradient(45deg, rgba(255,103,0,0.3), rgba(0, 0, 80, 0.9)),*/
+    url('../../assets/image/logo.jpg') center center no-repeat;;
+    background-size: auto;
+}
 
 .links{
     padding-top: 32px;

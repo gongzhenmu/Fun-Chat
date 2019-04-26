@@ -42,7 +42,7 @@ export class AuthService {
         .then((userCredential) => {
            this.authState = userCredential;
           this.setUserStatus('online');
-          this.router.navigate(['chat']);
+          this.router.navigate(['chooseroom']);
         }).catch(error => alert(error));
 
    }
