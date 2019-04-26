@@ -3,16 +3,19 @@
 }
 
 .userListWrapper {
-    background-color: #2A2845;
+    /*background-color: #000;*/
+    background: 
+    url('../../assets/image/background2.jpg') center center no-repeat;;
     color: #fff;
-    display: flex;
+    /*display: flex;*/
     font-family: "Open Sans", sans-serif;
     font-size: 2em;
     flex: 1;
     order: 1;
     padding:20px 0px 40px 30px;
-    border-right: 1px solid #222;
-    border-radius: 5px;
+    /*border-right: 1px solid #222;*/
+
+   
 }
 
 .feedWrapper {
@@ -25,7 +28,10 @@
     padding:20px 0px 0px 24px;
     background: 
     /*linear-gradient(181deg, rgba(100,200,255,0.6), rgba(0, 0, 0, 0.9)),*/
-    url('../../assets/image/backgroundMovie.jpg') center center no-repeat;;
+    url('../../assets/image/movieBack.jpg') center center no-repeat;;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
 }
 
 

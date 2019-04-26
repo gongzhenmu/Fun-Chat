@@ -13,9 +13,11 @@
     padding:20px 0px 40px 30px;
     border-right: 1px solid #222;
     border-radius: 5px;
+    background: 
+    url('../../assets/image/pinklist.jpg')  no-repeat;
 }
 
-.feedWrapper {
+.feedWrapper {  
     background-color: #fff;
     font-family: "Open Sans", sans-serif;
     font-size: 1.2em;
@@ -24,7 +26,7 @@
     overflow-y: auto;
     padding:20px 0px 0px 24px;
     background: 
-    linear-gradient(181deg, rgba(100,200,255,0.6), rgba(0, 0, 0, 0.9)),
+    /*linear-gradient(181deg, rgba(100,200,255,0.6), rgba(0, 0, 0, 0.9)),*/
     url('../../assets/image/background1.jpg') center center no-repeat;;
 }
 

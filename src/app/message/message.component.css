@@ -1,18 +1,29 @@
 .messageContainer{
     display: flex;
     height: auto;
+    width: 80%;
+    min-width: 400px;
+    border-radius: 15px;
+    align-items:stretch;
+    background-color: #00000;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.messageContainerPink{
+    display: flex;
+    height: auto;
     width: 70%;
     min-width: 400px;
     border-radius: 15px;
     align-items:stretch;
-    background-color: #268A83;
+    background-color: #FF66B2;
     box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.isOwnMessageContainer{
+/*.isOwnMessageContainer{
     background-color: #01579B;
 }
-
+*/
 .messageData{
     flex: 1;
     padding: 10px;
@@ -42,7 +53,7 @@
     height: auto;
     width: auto;
     flex: 9;
-    background-color: #fff;
+    background-color: #E0E0E0;
     padding: 10px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;

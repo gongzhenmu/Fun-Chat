@@ -1,6 +1,7 @@
-/*.btn1 {
+.btn1 {
   height: 54px;
   margin-top: 32px;
+  background-color: #000;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -8,17 +9,17 @@
   text-decoration: none;
   font-size: 16px;
   border-radius: 25px;
-  box-shadow: 0 1px 3px rgba(255, 222, 121, 0.96), 0 1px 2px rgba(255, 222, 121, 0.96);
+  /*box-shadow: 0 1px 3px rgba(255, 222, 121, 0.96), 0 1px 2px rgba(255, 222, 121, 0.96);*/
   transition: ease-in 0.2s;
-  width: 70%;
+  width: 80%;
 }
 
 .btn1:not([disabled]):hover {
-  background-color: rgba(255, 222, 121, 0.96);
+  background-color: #404040;
   color: white;
 }
 
 .btn1[disabled] {
   color : rgb(187, 187, 187);
   background-color: rgba(230, 230, 229, 0.96);
-}*/
+}
