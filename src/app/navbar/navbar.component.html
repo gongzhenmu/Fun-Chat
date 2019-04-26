@@ -1,19 +1,30 @@
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Lora:700">
+
 <div class="navBar">
     <div id="logo"></div>
     <div id="heading"><a>{{ apptitle }}</a></div>
 
   <div class="links">
     <span>
-      <a *ngIf="(user|async)?.uid" routerLink="/chooseroom">Home</a>
+      <a *ngIf="(user|async)?.uid" routerLink="/chooseroom" style="font-family:'Lora',serif;">
+        <font size = "5">Home</font>
+        </a>
     </span>
   	<span>
-      <a *ngIf="(user|async)?.uid" routerLink="/chat">Room1</a>
+        <a *ngIf="(user|async)?.uid" routerLink="/chat" style="font-family:'Lora',serif;">
+          <font size = "5">Movie</font>
+          </a> 
+    </span>
+  	<span>
+        <a *ngIf="(user|async)?.uid" routerLink="/chat2" style="font-family:'Lora',serif;">
+          <font size = "5">Sports</font>
+          </a> 
     </span>
     <span>
-      <a *ngIf="(user|async)?.uid" routerLink="/chat2">Room2</a>
-    </span>
-    <span>
-      <a *ngIf="(user|async)?.uid" routerLink="/chat3">Room3</a>
+        <a *ngIf="(user|async)?.uid" routerLink="/chat3" style="font-family:'Lora',serif;">
+          <font size = "5">Food</font>
+          </a> 
     </span>
     <span>
       <a *ngIf="!(user|async)?.uid" href="#" (click)="login()">Login</a>
@@ -23,7 +34,7 @@
     </span>
 
     <span>
-      <span id="userEmail" *ngIf="(user|async)?.uid">Hello, {{userEmail}}</span>
+      <span id="userEmail" *ngIf="(user|async)?.uid" >Hello, {{userEmail}}</span>
     </span>
     <span>
       <a *ngIf="(user|async)?.uid" href="#" (click)="logout()">Logout</a>
