@@ -29,7 +29,8 @@
     padding:20px 0px 0px 24px;
     background: 
     /*linear-gradient(181deg, rgba(100,200,255,0.6), rgba(0, 0, 0, 0.9)),*/
-    url('../../assets/image/background1.jpg') center center no-repeat;;
+    url('../../assets/image/spb1.png') center center no-repeat;;
+    background-size: 130%;
 }
 
 
