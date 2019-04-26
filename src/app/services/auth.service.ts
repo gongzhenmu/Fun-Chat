@@ -61,7 +61,7 @@ export class AuthService {
                 const status = 'online';
                 
                 this.setUserData(email,  status);
-                this.router.navigate(['chat']);
+                this.router.navigate(['chooseroom']);
 
               }).catch(error => alert(error));
     }
