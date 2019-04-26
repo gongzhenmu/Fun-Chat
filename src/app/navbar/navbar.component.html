@@ -8,7 +8,7 @@ href="https://fonts.googleapis.com/css?family=Lora:700">
   <div class="links">
     <span>
       <a *ngIf="(user|async)?.uid" routerLink="/chooseroom" style="font-family:'Lora',serif;">
-        <font size = "5">Home</font>
+        <font size = "3">Home</font>
         </a>
     </span>
 
@@ -32,10 +32,10 @@ href="https://fonts.googleapis.com/css?family=Lora:700">
     </span>
 
     <span>
-      <span id="userEmail" *ngIf="(user|async)?.uid" >Hello, {{userEmail}}</span>
+      <span id="userEmail" *ngIf="(user|async)?.uid"  style="font-family:'Lora',serif;">Hello, {{userEmail}}</span>
     </span>
     <span>
-      <a *ngIf="(user|async)?.uid" href="#" (click)="logout()">Logout</a>
+      <a *ngIf="(user|async)?.uid" href="#" (click)="logout() " style="font-family:'Lora',serif;">Logout</a>
     </span>
   </div>
 </div>
