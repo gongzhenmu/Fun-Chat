@@ -20,6 +20,16 @@ app-chatroom {
     flex-direction: column;
     width: 100%
 }
+app-chatroom2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+app-chatroom3 {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
 
 app-navbar{
     width: 100%;

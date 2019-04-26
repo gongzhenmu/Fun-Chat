@@ -11,10 +11,9 @@ href="https://fonts.googleapis.com/css?family=Lora:700">
         <font size = "5">Home</font>
         </a>
     </span>
-  	<span>
-        <a *ngIf="(user|async)?.uid" routerLink="/chat" style="font-family:'Lora',serif;">
-          <font size = "5">Movie</font>
-          </a> 
+
+  	<!-- <span>
+      <a *ngIf="(user|async)?.uid" routerLink="/chat">Room1</a>
     </span>
   	<span>
         <a *ngIf="(user|async)?.uid" routerLink="/chat2" style="font-family:'Lora',serif;">
@@ -22,10 +21,9 @@ href="https://fonts.googleapis.com/css?family=Lora:700">
           </a> 
     </span>
     <span>
-        <a *ngIf="(user|async)?.uid" routerLink="/chat3" style="font-family:'Lora',serif;">
-          <font size = "5">Food</font>
-          </a> 
-    </span>
+
+      <a *ngIf="(user|async)?.uid" routerLink="/chat3">Room3</a>
+    </span> -->
     <span>
       <a *ngIf="!(user|async)?.uid" href="#" (click)="login()">Login</a>
     </span>

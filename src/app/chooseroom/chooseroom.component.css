@@ -20,7 +20,8 @@
     background-size: auto;
 
 
-}.sportCard{
+}
+.sportCard{
     display: block;
     border: 1px solid #000;
     border-radius: 50px;
@@ -37,7 +38,8 @@
       background-size: auto;
   
   
-  }.FoodCard{
+  }
+.FoodCard{
     display: block;
     border: 1px solid #000;
     border-radius: 50px;
